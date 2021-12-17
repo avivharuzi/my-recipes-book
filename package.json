@@ -40,6 +40,7 @@
     "@angular/language-service": "~13.1.0",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@e-square/nx-ddd": "^1.1.0",
     "@nrwl/angular": "^13.3.8",
     "@nrwl/cli": "13.3.8",
     "@nrwl/cypress": "13.3.8",

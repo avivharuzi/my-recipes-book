@@ -42,6 +42,20 @@
     },
     "@nrwl/angular:component": {
       "style": "scss"
+    },
+    "@e-square/nx-ddd": {
+      "library": {
+        "sharedDomain": "shared",
+        "domainTagName": "scope",
+        "angular": {
+          "prefix": "",
+          "flat": true,
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "createStories": false,
+          "unitTestRunner": "jest"
+        }
+      }
     }
   },
   "defaultProject": "my-recipes-book"
