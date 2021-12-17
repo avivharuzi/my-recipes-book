@@ -1,0 +1,28 @@
+{
+  "root": "apps/my-recipes-book-e2e",
+  "sourceRoot": "apps/my-recipes-book-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/my-recipes-book-e2e/cypress.json",
+        "devServerTarget": "my-recipes-book:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "my-recipes-book:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/my-recipes-book-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["my-recipes-book"]
+}

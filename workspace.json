@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "my-recipes-book": "apps/my-recipes-book",
+    "my-recipes-book-e2e": "apps/my-recipes-book-e2e"
+  }
 }
