@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/feature-not-found",
+  "sourceRoot": "libs/shared/feature-not-found/src",
+  "prefix": "shared",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/feature-not-found"],
+      "options": {
+        "jestConfig": "libs/shared/feature-not-found/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/feature-not-found/src/**/*.ts",
+          "libs/shared/feature-not-found/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared", "type:feature"]
+}

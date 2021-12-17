@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/recipes/data-access",
+  "sourceRoot": "libs/recipes/data-access/src",
+  "prefix": "recipes",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/recipes/data-access"],
+      "options": {
+        "jestConfig": "libs/recipes/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/recipes/data-access/src/**/*.ts",
+          "libs/recipes/data-access/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:recipes", "type:data-access"]
+}

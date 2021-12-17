@@ -1,7 +1,15 @@
 {
   "version": 2,
   "projects": {
+    "auth-feature-login": "libs/auth/feature-login",
     "my-recipes-book": "apps/my-recipes-book",
-    "my-recipes-book-e2e": "apps/my-recipes-book-e2e"
+    "my-recipes-book-e2e": "apps/my-recipes-book-e2e",
+    "recipes-data-access": "libs/recipes/data-access",
+    "recipes-feature-detail": "libs/recipes/feature-detail",
+    "recipes-feature-edit": "libs/recipes/feature-edit",
+    "recipes-feature-list": "libs/recipes/feature-list",
+    "recipes-feature-new": "libs/recipes/feature-new",
+    "shared-data-access-auth": "libs/shared/data-access-auth",
+    "shared-feature-not-found": "libs/shared/feature-not-found"
   }
 }

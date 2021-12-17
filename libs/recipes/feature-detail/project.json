@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/recipes/feature-detail",
+  "sourceRoot": "libs/recipes/feature-detail/src",
+  "prefix": "recipes",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/recipes/feature-detail"],
+      "options": {
+        "jestConfig": "libs/recipes/feature-detail/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/recipes/feature-detail/src/**/*.ts",
+          "libs/recipes/feature-detail/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:recipes", "type:feature"]
+}
