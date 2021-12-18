@@ -23,7 +23,7 @@ import { AUTH_OPTIONS_TOKEN } from './auth-options-token';
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly USERS_COLLECTION_NAME = 'users';
+  readonly USERS_COLLECTION_NAME = 'users';
 
   private userSubject: BehaviorSubject<User | null> =
     new BehaviorSubject<User | null>(null);

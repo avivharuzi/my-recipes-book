@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SharedDataAccessAuthModule } from '@my-recipes-book/shared/data-access-auth';
+import {
+  FirebaseAppModule,
+  FirebaseAuthModule,
+  FirebaseFirestoreModule,
+} from '@my-recipes-book/shared/util-firebase';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +16,13 @@ import { AppComponent } from './app.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(() => getFirestore()),
-    provideAuth(() => getAuth()),
+    FirebaseAppModule.forRoot(environment.firebaseConfig),
+    FirebaseFirestoreModule.forRoot(),
+    FirebaseAuthModule.forRoot(),
+    SharedDataAccessAuthModule.forRoot({
+      loggedInRedirectTo: '/',
+      loggedOutRedirectTo: '/auth/login',
+    }),
   ],
   bootstrap: [AppComponent],
 })

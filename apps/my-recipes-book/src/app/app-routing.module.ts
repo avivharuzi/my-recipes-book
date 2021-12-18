@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {
+  AuthGuard,
+  NoAuthGuard,
+} from '@my-recipes-book/shared/data-access-auth';
+
 const roots: Routes = [
   {
     path: 'auth',
+    canActivateChild: [NoAuthGuard],
     children: [
       {
         path: '',
@@ -21,6 +27,7 @@ const roots: Routes = [
   },
   {
     path: 'recipes',
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: '',
