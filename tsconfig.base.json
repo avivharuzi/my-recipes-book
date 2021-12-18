@@ -45,6 +45,7 @@
       "@my-recipes-book/recipes/feature-new": [
         "libs/recipes/feature-new/src/index.ts"
       ],
+      "@my-recipes-book/recipes/ui-form": ["libs/recipes/ui-form/src/index.ts"],
       "@my-recipes-book/shared/data-access-auth": [
         "libs/shared/data-access-auth/src/index.ts"
       ],

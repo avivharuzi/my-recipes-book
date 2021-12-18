@@ -1,1 +1,5 @@
-<p>list works!</p>
+<ng-container *ngIf="recipes$ | async as recipes">
+  <ng-container *ngFor="let recipe of recipes">
+    <pre>{{ recipe | json }}</pre>
+  </ng-container>
+</ng-container>

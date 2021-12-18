@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/recipes/ui-form",
+  "sourceRoot": "libs/recipes/ui-form/src",
+  "prefix": "recipes",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/recipes/ui-form"],
+      "options": {
+        "jestConfig": "libs/recipes/ui-form/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/recipes/ui-form/src/**/*.ts",
+          "libs/recipes/ui-form/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:recipes", "type:ui"]
+}

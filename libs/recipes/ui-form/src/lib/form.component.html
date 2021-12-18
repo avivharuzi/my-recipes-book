@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+  <input formControlName="title" placeholder="Title" type="text" />
+
+  <textarea formControlName="description" placeholder="Description"></textarea>
+  <textarea formControlName="ingredients" placeholder="Ingredients"></textarea>
+  <textarea formControlName="directions" placeholder="Directions"></textarea>
+
+  <input
+    formControlName="preparationTime"
+    placeholder="Preparation Time"
+    type="number"
+  />
+  <input
+    formControlName="cookingTime"
+    placeholder="Cooking Time"
+    type="number"
+  />
+  <input
+    formControlName="servingsAmount"
+    placeholder="Servings Amount"
+    type="number"
+  />
+
+  <button type="submit">Add recipe</button>
+</form>

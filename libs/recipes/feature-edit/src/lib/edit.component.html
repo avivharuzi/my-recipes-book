@@ -1,1 +1,6 @@
-<p>edit works!</p>
+<ng-container *ngIf="recipe$ | async as recipe">
+  <recipes-form
+    (recipeFormSubmit)="onRecipeFormSubmit($event, recipe.id)"
+    [recipe]="recipe"
+  ></recipes-form>
+</ng-container>

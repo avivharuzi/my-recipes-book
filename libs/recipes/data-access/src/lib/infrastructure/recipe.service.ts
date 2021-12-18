@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from '@my-recipes-book/shared/data-access-auth';
 import {
   FirebaseFirestoreModel,
   FirebaseFirestoreService,
+  FirebaseTimestamp,
 } from '@my-recipes-book/shared/util-firebase';
-import { first, map, Observable, switchMap } from 'rxjs';
+import { catchError, first, map, Observable, switchMap } from 'rxjs';
+
 import { Recipe } from '../entities';
 
 @Injectable({
@@ -16,27 +19,38 @@ export class RecipeService {
 
   constructor(
     private authService: AuthService,
-    private firebaseFirestoreService: FirebaseFirestoreService
+    private firebaseFirestoreService: FirebaseFirestoreService,
+    private router: Router
   ) {}
 
-  createRecipe(recipe: Recipe): Observable<string> {
-    return this.getRecipesPath().pipe(
+  create(recipe: Recipe): Observable<string> {
+    return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
-        this.firebaseFirestoreService.addOne<Recipe>(recipesPath, recipe)
+        this.firebaseFirestoreService.addOne<Recipe>(recipesPath, {
+          ...recipe,
+          updatedAt:
+            this.firebaseFirestoreService.getServerTimestamp() as FirebaseTimestamp,
+          createdAt:
+            this.firebaseFirestoreService.getServerTimestamp() as FirebaseTimestamp,
+        })
       )
     );
   }
 
-  updateRecipe(recipe: Recipe): Observable<void> {
-    return this.getRecipesPath().pipe(
+  update(id: string, recipe: Recipe): Observable<void> {
+    return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
-        this.firebaseFirestoreService.updateOne<Recipe>(recipesPath, recipe)
+        this.firebaseFirestoreService.updateOne<Recipe>([...recipesPath, id], {
+          ...recipe,
+          updatedAt:
+            this.firebaseFirestoreService.getServerTimestamp() as FirebaseTimestamp,
+        })
       )
     );
   }
 
-  getRecipes(): Observable<FirebaseFirestoreModel<Recipe>[]> {
-    return this.getRecipesPath().pipe(
+  getAll(): Observable<FirebaseFirestoreModel<Recipe>[]> {
+    return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
         this.firebaseFirestoreService.getManyWithChanges<Recipe>(
           recipesPath,
@@ -49,15 +63,46 @@ export class RecipeService {
     );
   }
 
-  deleteRecipe(id: string): Observable<void> {
-    return this.getRecipesPath().pipe(
+  getDetail(id: string): Observable<FirebaseFirestoreModel<Recipe> | null> {
+    return this.getCollectionPath().pipe(
+      switchMap((recipesPath) =>
+        this.firebaseFirestoreService.getOne<Recipe>([...recipesPath, id])
+      )
+    );
+  }
+
+  getDetailFromRoute(id$: Observable<string | null>) {
+    return id$.pipe(
+      switchMap((id) => {
+        if (!id) {
+          throw Error('ID is empty');
+        }
+        return this.getDetail(id);
+      }),
+      map((recipe) => {
+        if (!recipe) {
+          throw new Error('Not found recipe');
+        }
+
+        return recipe;
+      }),
+      catchError((error) => {
+        this.router.navigateByUrl('**', { skipLocationChange: true }).then();
+
+        throw error;
+      })
+    );
+  }
+
+  delete(id: string): Observable<void> {
+    return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
         this.firebaseFirestoreService.deleteOne([...recipesPath, id])
       )
     );
   }
 
-  private getRecipesPath(): Observable<string[]> {
+  private getCollectionPath(): Observable<string[]> {
     return this.authService.user$.pipe(
       first(),
       map((user) => {

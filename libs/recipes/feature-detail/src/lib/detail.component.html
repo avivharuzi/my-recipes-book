@@ -1,1 +1,3 @@
-<p>detail works!</p>
+<ng-container *ngIf="recipe$ | async as recipe">
+  <pre>{{ recipe | json }}</pre>
+</ng-container>
