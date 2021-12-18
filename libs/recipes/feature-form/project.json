@@ -1,14 +1,14 @@
 {
   "projectType": "library",
-  "root": "libs/recipes/ui-form",
-  "sourceRoot": "libs/recipes/ui-form/src",
+  "root": "libs/recipes/feature-form",
+  "sourceRoot": "libs/recipes/feature-form/src",
   "prefix": "recipes",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/recipes/ui-form"],
+      "outputs": ["coverage/libs/recipes/feature-form"],
       "options": {
-        "jestConfig": "libs/recipes/ui-form/jest.config.js",
+        "jestConfig": "libs/recipes/feature-form/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -16,8 +16,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/recipes/ui-form/src/**/*.ts",
-          "libs/recipes/ui-form/src/**/*.html"
+          "libs/recipes/feature-form/src/**/*.ts",
+          "libs/recipes/feature-form/src/**/*.html"
         ]
       }
     }

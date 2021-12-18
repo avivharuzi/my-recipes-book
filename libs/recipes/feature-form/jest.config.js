@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'recipes-ui-form',
+  displayName: 'recipes-feature-form',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/recipes/ui-form',
+  coverageDirectory: '../../../coverage/libs/recipes/feature-form',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

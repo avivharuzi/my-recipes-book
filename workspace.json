@@ -7,9 +7,9 @@
     "recipes-data-access": "libs/recipes/data-access",
     "recipes-feature-detail": "libs/recipes/feature-detail",
     "recipes-feature-edit": "libs/recipes/feature-edit",
+    "recipes-feature-form": "libs/recipes/feature-form",
     "recipes-feature-list": "libs/recipes/feature-list",
     "recipes-feature-new": "libs/recipes/feature-new",
-    "recipes-ui-form": "libs/recipes/ui-form",
     "shared-data-access-auth": "libs/shared/data-access-auth",
     "shared-feature-not-found": "libs/shared/feature-not-found",
     "shared-util-firebase": "libs/shared/util-firebase"

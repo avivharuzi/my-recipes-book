@@ -9,4 +9,4 @@ import { FormComponent } from './form.component';
   declarations: [FormComponent],
   exports: [FormComponent],
 })
-export class RecipesUiFormModule {}
+export class RecipesFeatureFormModule {}
