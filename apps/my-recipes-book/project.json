@@ -16,10 +16,14 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/my-recipes-book/src/favicon.ico",
-          "apps/my-recipes-book/src/assets"
+          "apps/my-recipes-book/src/assets",
+          "apps/my-recipes-book/src/manifest.webmanifest",
+          "apps/my-recipes-book/src/robots.txt"
         ],
         "styles": ["apps/my-recipes-book/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/my-recipes-book/ngsw-config.json"
       },
       "configurations": {
         "production": {
