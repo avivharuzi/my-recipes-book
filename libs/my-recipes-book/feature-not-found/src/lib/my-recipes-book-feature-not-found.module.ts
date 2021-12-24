@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { NotFoundComponent } from './not-found.component';
 
 @NgModule({
@@ -12,4 +13,4 @@ import { NotFoundComponent } from './not-found.component';
   ],
   declarations: [NotFoundComponent],
 })
-export class SharedFeatureNotFoundModule {}
+export class MyRecipesBookFeatureNotFoundModule {}

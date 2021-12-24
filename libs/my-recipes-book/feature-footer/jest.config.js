@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'shared-feature-not-found',
+  displayName: 'my-recipes-book-feature-footer',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/shared/feature-not-found',
+  coverageDirectory: '../../../coverage/libs/my-recipes-book/feature-footer',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, first, map, Observable, switchMap } from 'rxjs';
 
 import { AuthService } from '@my-recipes-book/shared/data-access-auth';
 import {
@@ -7,7 +8,6 @@ import {
   FirebaseFirestoreService,
   FirebaseTimestamp,
 } from '@my-recipes-book/shared/util-firebase';
-import { catchError, first, map, Observable, switchMap } from 'rxjs';
 
 import { Recipe } from '../entities';
 

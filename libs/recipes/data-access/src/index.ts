@@ -1,3 +1,2 @@
 export * from './lib/entities';
 export * from './lib/infrastructure';
-export * from './lib/recipes-data-access.module';

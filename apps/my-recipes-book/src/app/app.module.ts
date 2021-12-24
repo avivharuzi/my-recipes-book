@@ -7,10 +7,12 @@ import {
   FirebaseAppModule,
   FirebaseAuthModule,
   FirebaseFirestoreModule,
+  FirebaseStorageModule,
 } from '@my-recipes-book/shared/util-firebase';
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +28,7 @@ import { AppComponent } from './app.component';
     FirebaseAppModule.forRoot(environment.firebaseConfig),
     FirebaseFirestoreModule.forRoot(),
     FirebaseAuthModule.forRoot(),
+    FirebaseStorageModule.forRoot(),
     SharedDataAccessAuthModule.forRoot({
       loggedInRedirectTo: '/',
       loggedOutRedirectTo: '/auth/login',

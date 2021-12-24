@@ -1,11 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
-import {
-  FirebaseAuthService,
-  FirebaseFirestoreService,
-  FirebaseUser,
-} from '@my-recipes-book/shared/util-firebase';
 import {
   BehaviorSubject,
   from,
@@ -15,9 +9,16 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
-import { User } from '../entities';
-import { AuthOptions } from './auth-options';
+
+import {
+  FirebaseAuthService,
+  FirebaseFirestoreService,
+  FirebaseUser,
+} from '@my-recipes-book/shared/util-firebase';
+
 import { AUTH_OPTIONS_TOKEN } from './auth-options-token';
+import { AuthOptions } from './auth-options';
+import { User } from '../entities';
 
 @Injectable({
   providedIn: 'root',

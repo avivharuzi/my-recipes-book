@@ -24,6 +24,7 @@
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
+                  "type:feature",
                   "type:ui",
                   "type:data-access",
                   "type:util"
@@ -52,6 +53,13 @@
               {
                 "sourceTag": "scope:shared",
                 "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:my-recipes-book",
+                "onlyDependOnLibsWithTags": [
+                  "scope:my-recipes-book",
+                  "scope:shared"
+                ]
               }
             ]
           }

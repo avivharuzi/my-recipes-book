@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "shared",
+            "prefix": "myRecipesBook",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "shared",
+            "prefix": "my-recipes-book",
             "style": "kebab-case"
           }
         ]

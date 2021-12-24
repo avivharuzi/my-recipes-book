@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/my-recipes-book/feature-header",
+  "sourceRoot": "libs/my-recipes-book/feature-header/src",
+  "prefix": "my-recipes-book",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/my-recipes-book/feature-header"],
+      "options": {
+        "jestConfig": "libs/my-recipes-book/feature-header/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/my-recipes-book/feature-header/src/**/*.ts",
+          "libs/my-recipes-book/feature-header/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:my-recipes-book", "type:feature"]
+}

@@ -26,51 +26,11 @@ const roots: Routes = [
     ],
   },
   {
-    path: 'recipes',
-    canActivateChild: [AuthGuard],
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        loadChildren: () =>
-          import('@my-recipes-book/recipes/feature-list').then(
-            ({ RecipesFeatureListModule }) => RecipesFeatureListModule
-          ),
-      },
-      {
-        path: 'new',
-        loadChildren: () =>
-          import('@my-recipes-book/recipes/feature-new').then(
-            ({ RecipesFeatureNewModule }) => RecipesFeatureNewModule
-          ),
-      },
-      {
-        path: ':id',
-        pathMatch: 'full',
-        loadChildren: () =>
-          import('@my-recipes-book/recipes/feature-detail').then(
-            ({ RecipesFeatureDetailModule }) => RecipesFeatureDetailModule
-          ),
-      },
-      {
-        path: ':id/edit',
-        loadChildren: () =>
-          import('@my-recipes-book/recipes/feature-edit').then(
-            ({ RecipesFeatureEditModule }) => RecipesFeatureEditModule
-          ),
-      },
-    ],
-  },
-  {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'recipes',
-  },
-  {
-    path: '**',
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('@my-recipes-book/shared/feature-not-found').then(
-        ({ SharedFeatureNotFoundModule }) => SharedFeatureNotFoundModule
+      import('./layouts/auth-layout/auth-layout.module').then(
+        ({ AuthLayoutModule }) => AuthLayoutModule
       ),
   },
 ];

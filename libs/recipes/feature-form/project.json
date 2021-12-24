@@ -22,5 +22,5 @@
       }
     }
   },
-  "tags": ["scope:recipes", "type:ui"]
+  "tags": ["scope:recipes", "type:feature"]
 }

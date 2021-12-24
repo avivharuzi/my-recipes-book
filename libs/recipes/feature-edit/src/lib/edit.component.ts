@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 import { Recipe, RecipeService } from '@my-recipes-book/recipes/data-access';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'recipes-edit',

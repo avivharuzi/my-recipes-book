@@ -30,6 +30,15 @@
       "@my-recipes-book/auth/feature-login": [
         "libs/auth/feature-login/src/index.ts"
       ],
+      "@my-recipes-book/my-recipes-book/feature-footer": [
+        "libs/my-recipes-book/feature-footer/src/index.ts"
+      ],
+      "@my-recipes-book/my-recipes-book/feature-header": [
+        "libs/my-recipes-book/feature-header/src/index.ts"
+      ],
+      "@my-recipes-book/my-recipes-book/feature-not-found": [
+        "libs/my-recipes-book/feature-not-found/src/index.ts"
+      ],
       "@my-recipes-book/recipes/data-access": [
         "libs/recipes/data-access/src/index.ts"
       ],
@@ -50,9 +59,6 @@
       ],
       "@my-recipes-book/shared/data-access-auth": [
         "libs/shared/data-access-auth/src/index.ts"
-      ],
-      "@my-recipes-book/shared/feature-not-found": [
-        "libs/shared/feature-not-found/src/index.ts"
       ],
       "@my-recipes-book/shared/util-firebase": [
         "libs/shared/util-firebase/src/index.ts"

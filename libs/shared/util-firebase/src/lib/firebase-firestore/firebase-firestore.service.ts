@@ -21,11 +21,11 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { map, Observable } from 'rxjs';
-import { fromFirebasePromise } from '../utils';
-import { FirebaseFirestoreModel } from './firebase-firestore-model';
-import { FirebaseFirestorePath } from './firebase-firestore-path';
 
 import { FIREBASE_FIRESTORE_TOKEN } from './firebase-firestore-token';
+import { FirebaseFirestoreModel } from './firebase-firestore-model';
+import { FirebaseFirestorePath } from './firebase-firestore-path';
+import { fromFirebasePromise } from '../utils';
 import { getCollectionOrDocumentPath, getModel, QueryBuilder } from './utils';
 
 @Injectable({

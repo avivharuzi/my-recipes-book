@@ -1,0 +1,72 @@
+<ng-container *ngIf="user$ | async as user">
+  <header>
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
+          <img
+            alt="My Recipes Book"
+            class="me-3"
+            height="30px"
+            src="/assets/icons/icon-72x72.png"
+          />
+          <span class="h4 m-0 font-logo-regular">My Recipes Book</span>
+        </a>
+        <button
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-bs-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                [routerLinkActiveOptions]="{ exact: true }"
+                aria-current="page"
+                class="nav-link"
+                routerLink="/recipes"
+                routerLinkActive="active"
+              >
+                Recipes</a
+              >
+            </li>
+          </ul>
+          <div class="dropdown">
+            <a
+              aria-expanded="false"
+              class="nav-link px-0"
+              data-bs-toggle="dropdown"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+            >
+              <img
+                height="40px"
+                [src]="user.photoURL"
+                alt="Profile Image"
+                class="rounded-circle"
+              />
+            </a>
+            <ul
+              aria-labelledby="profileDropdown"
+              class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end"
+            >
+              <li>
+                <a (click)="signOut()" class="dropdown-item cursor-pointer"
+                  >Sign out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</ng-container>
