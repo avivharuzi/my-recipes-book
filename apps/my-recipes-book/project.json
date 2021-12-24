@@ -18,7 +18,12 @@
           "apps/my-recipes-book/src/favicon.ico",
           "apps/my-recipes-book/src/assets",
           "apps/my-recipes-book/src/manifest.webmanifest",
-          "apps/my-recipes-book/src/robots.txt"
+          "apps/my-recipes-book/src/robots.txt",
+          {
+            "input": "libs/assets",
+            "glob": "*/**",
+            "output": "assets"
+          }
         ],
         "styles": ["apps/my-recipes-book/src/styles.scss"],
         "scripts": [],

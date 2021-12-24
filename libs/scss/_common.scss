@@ -1,0 +1,22 @@
+@use './variables';
+
+html,
+body,
+.font-body-regular {
+  font-family: variables.$font-body;
+  font-weight: 400;
+}
+
+.font-logo-regular {
+  font-family: variables.$font-logo;
+}
+
+.font-body-light {
+  font-family: variables.$font-body;
+  font-weight: 300;
+}
+
+.font-body-bold {
+  font-family: variables.$font-body;
+  font-weight: 700;
+}
