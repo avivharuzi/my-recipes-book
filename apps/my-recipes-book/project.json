@@ -26,7 +26,7 @@
           }
         ],
         "styles": ["apps/my-recipes-book/src/styles.scss"],
-        "scripts": [],
+        "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"],
         "serviceWorker": true,
         "ngswConfigPath": "apps/my-recipes-book/ngsw-config.json"
       },
