@@ -1,3 +1,3 @@
 module.exports = {
-  questions: ['type', 'subject', 'body'],
+  questions: ['type', 'subject'],
 };

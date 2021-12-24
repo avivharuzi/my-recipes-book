@@ -1,3 +1,3 @@
 # My Recipes Book
 
-Create and manage your own recipes book 🧑‍🍳
+Create and manage your own recipes book.

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve my-recipes-book",
+    "serve": "nx serve my-recipes-book",
     "build": "nx build my-recipes-book",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
