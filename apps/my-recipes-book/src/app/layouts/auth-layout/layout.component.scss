@@ -1,0 +1,15 @@
+.main-wrapper {
+  position: relative;
+  min-height: 100vh;
+
+  .main-with-header {
+    padding-bottom: 152px;
+  }
+
+  my-recipes-book-footer {
+    height: 152px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}
