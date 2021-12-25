@@ -89,7 +89,7 @@
       type="button"
       (click)="recipeDelete.emit()"
     >
-      Delete
+      <span><i class="bi bi-trash me-3"></i>Delete</span>
     </button>
     <div>
       <button
@@ -99,7 +99,9 @@
       >
         Cancel
       </button>
-      <button class="btn btn-primary btn-lg" type="submit">Save</button>
+      <button class="btn btn-primary btn-lg" type="submit">
+        <i class="bi bi-save me-3"></i>Save
+      </button>
     </div>
   </div>
 </form>

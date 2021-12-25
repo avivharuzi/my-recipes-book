@@ -1,5 +1,10 @@
 <div
   class="bg-light shadow cursor-pointer d-flex justify-content-center align-items-center h-100 rounded-3 p-3"
 >
-  <p class="m-0"><ng-content></ng-content></p>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="add-card-icon bg-white rounded-circle m-0 mb-3">
+      <i class="h1 bi bi-plus m-0"></i>
+    </div>
+    <p class="m-0"><ng-content></ng-content></p>
+  </div>
 </div>
