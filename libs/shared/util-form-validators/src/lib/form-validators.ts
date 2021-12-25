@@ -15,12 +15,6 @@ export class FormValidators {
       : null;
   }
 
-  static email(control: AbstractControl): ValidationErrors | null {
-    return Validators.email(control) !== null
-      ? { email: 'Email is invalid' }
-      : null;
-  }
-
   static min(min: number): ValidatorFn {
     return (control: AbstractControl) => {
       return Validators.min(min)(control) !== null

@@ -16,6 +16,12 @@
     "shared-data-access-auth": "libs/shared/data-access-auth",
     "shared-ui-add-card": "libs/shared/ui/add-card",
     "shared-ui-card": "libs/shared/ui/card",
+    "shared-ui-default-image": "libs/shared/ui/default-image",
+    "shared-ui-form-input": "libs/shared/ui/form-input",
+    "shared-ui-form-input-error-message": "libs/shared/ui/form-input-error-message",
+    "shared-ui-form-input-file": "libs/shared/ui/form-input-file",
+    "shared-ui-form-textarea": "libs/shared/ui/form-textarea",
+    "shared-ui-safe-url": "libs/shared/ui/safe-url",
     "shared-util-firebase": "libs/shared/util-firebase",
     "shared-util-form-helpers": "libs/shared/util-form-helpers",
     "shared-util-form-validators": "libs/shared/util-form-validators"

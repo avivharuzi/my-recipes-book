@@ -2,7 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 
-import { Recipe, RecipeService } from '@my-recipes-book/recipes/data-access';
+import {
+  CreateOrUpdateRecipe,
+  RecipeService,
+} from '@my-recipes-book/recipes/data-access';
 
 @Component({
   selector: 'recipes-edit',
@@ -20,7 +23,7 @@ export class EditComponent {
     private recipeService: RecipeService
   ) {}
 
-  onRecipeFormSubmit(updatedRecipe: Recipe, id: string) {
+  onRecipeFormSubmit(updatedRecipe: CreateOrUpdateRecipe, id: string) {
     this.recipeService.update(id, updatedRecipe).subscribe();
   }
 }

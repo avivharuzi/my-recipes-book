@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { Recipe, RecipeService } from '@my-recipes-book/recipes/data-access';
+import {
+  CreateOrUpdateRecipe,
+  RecipeService,
+} from '@my-recipes-book/recipes/data-access';
 
 @Component({
   selector: 'recipes-new',
@@ -11,7 +14,7 @@ import { Recipe, RecipeService } from '@my-recipes-book/recipes/data-access';
 export class NewComponent {
   constructor(private readonly recipeService: RecipeService) {}
 
-  onRecipeFormSubmit(recipe: Recipe): void {
+  onRecipeFormSubmit(recipe: CreateOrUpdateRecipe): void {
     this.recipeService.create(recipe).subscribe();
   }
 }

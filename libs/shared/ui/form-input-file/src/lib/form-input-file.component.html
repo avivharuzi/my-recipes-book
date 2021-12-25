@@ -1,0 +1,23 @@
+<div class="mb-3">
+  <ng-container *ngIf="label">
+    <label class="form-label" [for]="id">{{ label }}</label>
+  </ng-container>
+  <input
+    class="form-control form-control-lg"
+    type="file"
+    [class.is-invalid]="control.invalid && control.dirty"
+    [id]="id"
+    [multiple]="multiple"
+    (change)="onFileChange($event)"
+  />
+  <ng-container
+    *ngIf="
+      (control.invalid && control.dirty && control?.errors) || null
+        | formInputErrorMessage as errorMessage
+    "
+  >
+    <div class="invalid-feedback">
+      {{ errorMessage }}
+    </div>
+  </ng-container>
+</div>

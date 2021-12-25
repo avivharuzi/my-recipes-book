@@ -1,0 +1,33 @@
+<div class="mb-3">
+  <ng-container *ngIf="label">
+    <label class="form-label" [for]="id">{{ label }}</label>
+  </ng-container>
+  <input
+    #inputElement
+    class="form-control form-control-lg"
+    [class.is-invalid]="control.invalid && control.dirty"
+    [id]="id"
+    [attr.aria-describedby]="describedby"
+    [type]="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [value]="value"
+    (input)="onChange(inputElement.value)"
+    (blur)="onTouched()"
+  />
+  <ng-container *ngIf="describe">
+    <div class="form-text" [id]="describedby">
+      {{ describe }}
+    </div>
+  </ng-container>
+  <ng-container
+    *ngIf="
+      (control.invalid && control.dirty && control?.errors) || null
+        | formInputErrorMessage as errorMessage
+    "
+  >
+    <div class="invalid-feedback">
+      {{ errorMessage }}
+    </div>
+  </ng-container>
+</div>

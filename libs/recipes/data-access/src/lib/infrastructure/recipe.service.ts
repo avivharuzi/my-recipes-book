@@ -9,7 +9,7 @@ import {
   FirebaseTimestamp,
 } from '@my-recipes-book/shared/util-firebase';
 
-import { Recipe } from '../entities';
+import { CreateOrUpdateRecipe, Recipe } from '../entities';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +23,7 @@ export class RecipeService {
     private router: Router
   ) {}
 
-  create(recipe: Recipe): Observable<string> {
+  create(recipe: CreateOrUpdateRecipe): Observable<string> {
     return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
         this.firebaseFirestoreService.addOne<Recipe>(recipesPath, {
@@ -37,7 +37,7 @@ export class RecipeService {
     );
   }
 
-  update(id: string, recipe: Recipe): Observable<void> {
+  update(id: string, recipe: CreateOrUpdateRecipe): Observable<void> {
     return this.getCollectionPath().pipe(
       switchMap((recipesPath) =>
         this.firebaseFirestoreService.updateOne<Recipe>([...recipesPath, id], {

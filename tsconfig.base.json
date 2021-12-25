@@ -64,6 +64,24 @@
         "libs/shared/ui/add-card/src/index.ts"
       ],
       "@my-recipes-book/shared/ui/card": ["libs/shared/ui/card/src/index.ts"],
+      "@my-recipes-book/shared/ui/default-image": [
+        "libs/shared/ui/default-image/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/form-input": [
+        "libs/shared/ui/form-input/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/form-input-error-message": [
+        "libs/shared/ui/form-input-error-message/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/form-input-file": [
+        "libs/shared/ui/form-input-file/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/form-textarea": [
+        "libs/shared/ui/form-textarea/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/safe-url": [
+        "libs/shared/ui/safe-url/src/index.ts"
+      ],
       "@my-recipes-book/shared/util-firebase": [
         "libs/shared/util-firebase/src/index.ts"
       ],
