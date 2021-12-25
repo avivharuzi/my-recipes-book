@@ -14,6 +14,8 @@
     "recipes-feature-list": "libs/recipes/feature-list",
     "recipes-feature-new": "libs/recipes/feature-new",
     "shared-data-access-auth": "libs/shared/data-access-auth",
+    "shared-ui-add-card": "libs/shared/ui/add-card",
+    "shared-ui-card": "libs/shared/ui/card",
     "shared-util-firebase": "libs/shared/util-firebase"
   }
 }

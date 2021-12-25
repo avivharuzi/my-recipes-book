@@ -60,6 +60,10 @@
       "@my-recipes-book/shared/data-access-auth": [
         "libs/shared/data-access-auth/src/index.ts"
       ],
+      "@my-recipes-book/shared/ui/add-card": [
+        "libs/shared/ui/add-card/src/index.ts"
+      ],
+      "@my-recipes-book/shared/ui/card": ["libs/shared/ui/card/src/index.ts"],
       "@my-recipes-book/shared/util-firebase": [
         "libs/shared/util-firebase/src/index.ts"
       ]
