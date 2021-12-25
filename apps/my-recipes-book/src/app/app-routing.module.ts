@@ -6,7 +6,7 @@ import {
   NoAuthGuard,
 } from '@my-recipes-book/shared/data-access-auth';
 
-const roots: Routes = [
+const routes: Routes = [
   {
     path: 'auth',
     canActivateChild: [NoAuthGuard],
@@ -36,7 +36,12 @@ const roots: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(roots)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      paramsInheritanceStrategy: 'always',
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
