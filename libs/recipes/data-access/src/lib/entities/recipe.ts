@@ -5,10 +5,13 @@ export interface Recipe {
   description: string;
   ingredients: string[];
   directions: string[];
-  coverImage: string;
+  coverImageURL: string;
+  coverImagePath: string;
   preparationTime: number;
   cookingTime: number;
   servingsAmount: number;
   createdAt: FirebaseTimestamp;
   updatedAt: FirebaseTimestamp;
 }
+
+export type RecipeCoverImage = Pick<Recipe, 'coverImageURL' | 'coverImagePath'>;

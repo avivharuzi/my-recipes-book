@@ -9,8 +9,9 @@ import {
 import { FormBuilder, FormControl } from '@angular/forms';
 
 import {
-  CreateOrUpdateRecipe,
+  CreateRecipe,
   Recipe,
+  UpdateRecipe,
 } from '@my-recipes-book/recipes/data-access';
 import { markAllAsDirty } from '@my-recipes-book/shared/util-form-helpers';
 import {
@@ -27,7 +28,7 @@ import {
 export class FormComponent implements OnInit {
   @Input() recipe: Recipe | null = null;
 
-  @Output() recipeFormSubmit = new EventEmitter<CreateOrUpdateRecipe>();
+  @Output() recipeFormSubmit = new EventEmitter<CreateRecipe | UpdateRecipe>();
   @Output() recipeDelete = new EventEmitter<void>();
 
   recipeForm = this.formBuilder.group({
@@ -76,12 +77,22 @@ export class FormComponent implements OnInit {
     recipeFormValue.preparationTime = +recipeFormValue.preparationTime;
     recipeFormValue.cookingTime = +recipeFormValue.cookingTime;
     recipeFormValue.servingsAmount = +recipeFormValue.servingsAmount;
-    recipeFormValue.coverImage =
+
+    const coverImageFile =
       recipeFormValue.coverImage && recipeFormValue.coverImage.length > 0
         ? recipeFormValue.coverImage[0]
-        : this.recipe?.coverImage;
+        : null;
+    delete recipeFormValue.coverImage;
 
-    const body: CreateOrUpdateRecipe = recipeFormValue;
+    const existingRecipe = this.recipe ?? {};
+
+    const body: CreateRecipe | UpdateRecipe = {
+      recipe: {
+        ...existingRecipe,
+        ...recipeFormValue,
+      },
+      coverImageFile,
+    };
 
     this.recipeFormSubmit.emit(body);
   }

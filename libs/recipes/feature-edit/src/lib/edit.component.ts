@@ -3,8 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 
 import {
-  CreateOrUpdateRecipe,
+  CreateRecipe,
   RecipeService,
+  UpdateRecipe,
 } from '@my-recipes-book/recipes/data-access';
 
 @Component({
@@ -23,7 +24,7 @@ export class EditComponent {
     private recipeService: RecipeService
   ) {}
 
-  onRecipeFormSubmit(updatedRecipe: CreateOrUpdateRecipe, id: string) {
-    this.recipeService.update(id, updatedRecipe).subscribe();
+  onRecipeFormSubmit(updatedRecipe: CreateRecipe | UpdateRecipe, id: string) {
+    this.recipeService.update(id, updatedRecipe as UpdateRecipe).subscribe();
   }
 }

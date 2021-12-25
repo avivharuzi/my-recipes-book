@@ -37,14 +37,15 @@
       ></shared-form-textarea>
     </div>
     <div class="col-12 col-lg-4">
-      <div class="preview-image p-3 shadow mb-3 rounded-3">
+      <div class="preview-image p-3 shadow mb-5 rounded-3">
         <img
           alt="Preview Cover Image"
           sharedDefaultImage="/assets/images/defaults/default-upload.png"
           class="rounded-3"
           [src]="
             coverImagePreview ||
-              (recipe && recipe.coverImage ? recipe.coverImage : '') | safeUrl
+              (recipe && recipe.coverImageURL ? recipe.coverImageURL : '')
+              | safeUrl
           "
         />
       </div>

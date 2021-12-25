@@ -1,2 +1,3 @@
-export * from './create-or-update.recipe';
+export * from './create-recipe';
 export * from './recipe';
+export * from './update-recipe';
