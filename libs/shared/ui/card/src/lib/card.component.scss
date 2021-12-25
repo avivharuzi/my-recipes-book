@@ -1,4 +1,6 @@
 img {
   width: 100%;
   object-fit: cover;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }

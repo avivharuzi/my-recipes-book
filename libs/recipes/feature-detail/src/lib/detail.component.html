@@ -1,3 +1,71 @@
 <ng-container *ngIf="recipe$ | async as recipe">
-  <pre>{{ recipe | json }}</pre>
+  <div class="mb-3">
+    <div class="d-flex justify-content-between">
+      <h1 class="font-body-bold">{{ recipe.title }}</h1>
+      <div>
+        <button
+          class="btn btn-light btn-lg"
+          [routerLink]="['/recipes', recipe.id, 'edit']"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mb-4">
+    <time class="text-muted">{{ recipe.createdAt.toMillis() | date }}</time>
+  </div>
+  <div class="mb-5">
+    <p class="h5">{{ recipe.description }}</p>
+  </div>
+  <div class="mb-5">
+    <img
+      class="rounded-3 shadow"
+      [src]="recipe.coverImageURL"
+      [alt]="recipe.title"
+    />
+  </div>
+  <div class="row mb-5 g-3">
+    <div class="col-12 col-lg-4">
+      <div class="shadow rounded-3 bg-light p-3 text-center">
+        <span class="font-body-bold"
+          >{{ recipe.preparationTime }} min Preparation</span
+        >
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="shadow rounded-3 bg-light p-3 text-center">
+        <span class="font-body-bold">{{ recipe.cookingTime }} min Cooking</span>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="shadow rounded-3 bg-light p-3 text-center">
+        <span class="font-body-bold">{{ recipe.cookingTime }} min Cooking</span>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <h2 class="font-body-bold mb-4">Ingredients</h2>
+    <ng-container *ngFor="let ingredient of recipe.ingredients; let i = index">
+      <div class="form-check h4 mb-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          [id]="'recipeIngredient' + i"
+        />
+        <label class="form-check-label" [for]="'recipeIngredient' + i">
+          {{ ingredient }}
+        </label>
+      </div>
+    </ng-container>
+  </div>
+  <div>
+    <h2 class="font-body-bold mb-4">Directions</h2>
+    <ng-container *ngFor="let direction of recipe.directions; let i = index">
+      <div class="mb-3">
+        <h4 class="mb-2 font-body-bold">Step {{ i + 1 }}</h4>
+        <p class="m-0">{{ direction }}</p>
+      </div>
+    </ng-container>
+  </div>
 </ng-container>

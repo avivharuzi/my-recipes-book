@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
 
 import {
@@ -21,10 +21,20 @@ export class EditComponent {
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
-    private recipeService: RecipeService
+    private recipeService: RecipeService,
+    private router: Router
   ) {}
 
-  onRecipeFormSubmit(updatedRecipe: CreateRecipe | UpdateRecipe, id: string) {
+  onRecipeFormSubmit(
+    updatedRecipe: CreateRecipe | UpdateRecipe,
+    id: string
+  ): void {
     this.recipeService.update(id, updatedRecipe as UpdateRecipe).subscribe();
+  }
+
+  onRecipeDelete(id: string): void {
+    this.recipeService.delete(id).subscribe(() => {
+      this.router.navigate(['/recipes']).then();
+    });
   }
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {
   CreateRecipe,
@@ -13,9 +14,14 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewComponent {
-  constructor(private readonly recipeService: RecipeService) {}
+  constructor(
+    private readonly recipeService: RecipeService,
+    private router: Router
+  ) {}
 
   onRecipeFormSubmit(recipe: CreateRecipe | UpdateRecipe): void {
-    this.recipeService.create(recipe as CreateRecipe).subscribe();
+    this.recipeService.create(recipe as CreateRecipe).subscribe(() => {
+      this.router.navigate(['/recipes']).then();
+    });
   }
 }
