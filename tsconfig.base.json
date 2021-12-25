@@ -66,6 +66,12 @@
       "@my-recipes-book/shared/ui/card": ["libs/shared/ui/card/src/index.ts"],
       "@my-recipes-book/shared/util-firebase": [
         "libs/shared/util-firebase/src/index.ts"
+      ],
+      "@my-recipes-book/shared/util-form-helpers": [
+        "libs/shared/util-form-helpers/src/index.ts"
+      ],
+      "@my-recipes-book/shared/util-form-validators": [
+        "libs/shared/util-form-validators/src/index.ts"
       ]
     }
   },

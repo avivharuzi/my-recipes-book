@@ -16,6 +16,8 @@
     "shared-data-access-auth": "libs/shared/data-access-auth",
     "shared-ui-add-card": "libs/shared/ui/add-card",
     "shared-ui-card": "libs/shared/ui/card",
-    "shared-util-firebase": "libs/shared/util-firebase"
+    "shared-util-firebase": "libs/shared/util-firebase",
+    "shared-util-form-helpers": "libs/shared/util-form-helpers",
+    "shared-util-form-validators": "libs/shared/util-form-validators"
   }
 }

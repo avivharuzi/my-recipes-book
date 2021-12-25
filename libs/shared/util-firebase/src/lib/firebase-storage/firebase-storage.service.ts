@@ -42,7 +42,7 @@ export class FirebaseStorageService {
   }
 
   getUniquePathFromFile(subPath: string, file: File): string {
-    const fileExtension = file.name.split('.').pop();
+    const fileExtension = file.name.split('.').pop() || file.name;
 
     return `${subPath}/${uuidV4()}.${fileExtension}`;
   }

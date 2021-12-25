@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/util-form-validators",
+  "sourceRoot": "libs/shared/util-form-validators/src",
+  "prefix": "shared",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/util-form-validators"],
+      "options": {
+        "jestConfig": "libs/shared/util-form-validators/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/util-form-validators/src/**/*.ts",
+          "libs/shared/util-form-validators/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared", "type:util"]
+}
