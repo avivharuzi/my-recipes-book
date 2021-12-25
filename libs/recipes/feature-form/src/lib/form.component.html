@@ -1,6 +1,7 @@
 <form
   novalidate
   autocomplete="off"
+  [sharedLoader]="isLoading"
   (ngSubmit)="onSubmit()"
   [formGroup]="recipeForm"
 >

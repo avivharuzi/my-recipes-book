@@ -6,6 +6,7 @@ import {
   RecipeService,
   UpdateRecipe,
 } from '@my-recipes-book/recipes/data-access';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'recipes-new',
@@ -14,14 +15,20 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewComponent {
+  isLoading = false;
+
   constructor(
     private readonly recipeService: RecipeService,
     private router: Router
   ) {}
 
   onRecipeFormSubmit(recipe: CreateRecipe | UpdateRecipe): void {
-    this.recipeService.create(recipe as CreateRecipe).subscribe(() => {
-      this.router.navigate(['/recipes']).then();
-    });
+    this.isLoading = true;
+    this.recipeService
+      .create(recipe as CreateRecipe)
+      .pipe(finalize(() => (this.isLoading = false)))
+      .subscribe(() => {
+        this.router.navigate(['/recipes']).then();
+      });
   }
 }

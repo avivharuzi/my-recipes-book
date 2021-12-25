@@ -1,1 +1,4 @@
-<recipes-form (recipeFormSubmit)="onRecipeFormSubmit($event)"></recipes-form>
+<recipes-form
+  [isLoading]="isLoading"
+  (recipeFormSubmit)="onRecipeFormSubmit($event)"
+></recipes-form>

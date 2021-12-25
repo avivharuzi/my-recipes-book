@@ -21,6 +21,7 @@
     "shared-ui-form-input-error-message": "libs/shared/ui/form-input-error-message",
     "shared-ui-form-input-file": "libs/shared/ui/form-input-file",
     "shared-ui-form-textarea": "libs/shared/ui/form-textarea",
+    "shared-ui-loader": "libs/shared/ui/loader",
     "shared-ui-safe-url": "libs/shared/ui/safe-url",
     "shared-util-firebase": "libs/shared/util-firebase",
     "shared-util-form-helpers": "libs/shared/util-form-helpers",

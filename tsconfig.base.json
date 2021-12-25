@@ -79,6 +79,9 @@
       "@my-recipes-book/shared/ui/form-textarea": [
         "libs/shared/ui/form-textarea/src/index.ts"
       ],
+      "@my-recipes-book/shared/ui/loader": [
+        "libs/shared/ui/loader/src/index.ts"
+      ],
       "@my-recipes-book/shared/ui/safe-url": [
         "libs/shared/ui/safe-url/src/index.ts"
       ],

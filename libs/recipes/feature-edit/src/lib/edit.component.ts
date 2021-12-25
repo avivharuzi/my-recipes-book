@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs';
+import { finalize, map } from 'rxjs';
 
 import {
   CreateRecipe,
@@ -15,6 +15,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditComponent {
+  isLoading = false;
+
   recipe$ = this.recipeService.getDetailFromRoute(
     this.activatedRoute.paramMap.pipe(map((paramMap) => paramMap.get('id')))
   );
@@ -29,12 +31,30 @@ export class EditComponent {
     updatedRecipe: CreateRecipe | UpdateRecipe,
     id: string
   ): void {
-    this.recipeService.update(id, updatedRecipe as UpdateRecipe).subscribe();
+    this.isLoading = true;
+    this.recipeService
+      .update(id, updatedRecipe as UpdateRecipe)
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe(() => {
+        this.router.navigate(['/recipes', id]).then();
+      });
   }
 
   onRecipeDelete(id: string): void {
-    this.recipeService.delete(id).subscribe(() => {
-      this.router.navigate(['/recipes']).then();
-    });
+    this.isLoading = true;
+    this.recipeService
+      .delete(id)
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe(() => {
+        this.router.navigate(['/recipes']).then();
+      });
   }
 }

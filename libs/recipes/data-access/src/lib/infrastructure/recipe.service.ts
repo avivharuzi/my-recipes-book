@@ -32,12 +32,10 @@ export class RecipeService {
   ) {}
 
   create(createRecipe: CreateRecipe): Observable<string> {
-    console.log('createRecipe: ', createRecipe);
     return this.getCollectionPath().pipe(
       switchMap((path) => {
         return this.uploadCoverImage(createRecipe.coverImageFile).pipe(
           switchMap((coverImage) => {
-            console.log('coverImage: ', coverImage);
             const data = {
               ...createRecipe.recipe,
               ...coverImage,
@@ -46,7 +44,6 @@ export class RecipeService {
               createdAt:
                 this.firebaseFirestoreService.getServerTimestamp() as FirebaseTimestamp,
             };
-            console.log('data: ', data);
             return this.firebaseFirestoreService.addOne<Recipe>(path, data);
           })
         );

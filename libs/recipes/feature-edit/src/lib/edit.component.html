@@ -1,6 +1,7 @@
 <ng-container *ngIf="recipe$ | async as recipe">
   <recipes-form
     [recipe]="recipe"
+    [isLoading]="isLoading"
     (recipeFormSubmit)="onRecipeFormSubmit($event, recipe.id)"
     (recipeDelete)="onRecipeDelete(recipe.id)"
   ></recipes-form>

@@ -27,6 +27,7 @@ import {
 })
 export class FormComponent implements OnInit {
   @Input() recipe: Recipe | null = null;
+  @Input() isLoading = false;
 
   @Output() recipeFormSubmit = new EventEmitter<CreateRecipe | UpdateRecipe>();
   @Output() recipeDelete = new EventEmitter<void>();
