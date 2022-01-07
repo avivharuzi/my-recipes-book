@@ -6,10 +6,10 @@
     <ng-container *ngFor="let recipe of recipes">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" [routerLink]="[recipe.id]">
         <shared-card
-          [title]="recipe.title"
+          [description]="recipe.description"
           [image]="recipe.coverImageURL"
           [subtitle]="(recipe.createdAt.toMillis() | date) || ''"
-          [description]="recipe.description"
+          [title]="recipe.title"
         ></shared-card>
       </div>
     </ng-container>

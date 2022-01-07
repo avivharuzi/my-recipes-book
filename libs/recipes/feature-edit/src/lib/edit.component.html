@@ -1,8 +1,8 @@
 <ng-container *ngIf="recipe$ | async as recipe">
   <recipes-form
-    [recipe]="recipe"
     [isLoading]="isLoading"
-    (recipeFormSubmit)="onRecipeFormSubmit($event, recipe.id)"
+    [recipe]="recipe"
     (recipeDelete)="onRecipeDelete(recipe.id)"
+    (recipeFormSubmit)="onRecipeFormSubmit($event, recipe.id)"
   ></recipes-form>
 </ng-container>

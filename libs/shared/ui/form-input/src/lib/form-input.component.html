@@ -5,15 +5,15 @@
   <input
     #inputElement
     class="form-control form-control-lg"
-    [class.is-invalid]="control.invalid && control.dirty"
-    [id]="id"
     [attr.aria-describedby]="describedby"
-    [type]="type"
-    [placeholder]="placeholder"
+    [class.is-invalid]="control.invalid && control.dirty"
     [disabled]="disabled"
+    [id]="id"
+    [placeholder]="placeholder"
+    [type]="type"
     [value]="value"
-    (input)="onChange(inputElement.value)"
     (blur)="onTouched()"
+    (input)="onChange(inputElement.value)"
   />
   <ng-container *ngIf="describe">
     <div class="form-text" [id]="describedby">

@@ -1,48 +1,48 @@
 <form
-  novalidate
   autocomplete="off"
+  novalidate
+  [formGroup]="recipeForm"
   [sharedLoader]="isLoading"
   (ngSubmit)="onSubmit()"
-  [formGroup]="recipeForm"
 >
   <div class="row mb-4">
     <div class="col-12 col-lg-8">
       <shared-form-input
-        type="text"
         id="title"
+        type="text"
+        formControlName="title"
         label="Title"
         placeholder="Title"
-        formControlName="title"
       ></shared-form-input>
       <shared-form-textarea
         id="description"
+        formControlName="description"
         label="Description"
         placeholder="Description"
-        formControlName="description"
       ></shared-form-textarea>
       <shared-form-textarea
         id="ingredients"
+        describe="Put each ingredient on its own line."
+        describedby="ingredientsHelp"
+        formControlName="ingredients"
         label="Ingredients"
         placeholder="Ingredients"
-        formControlName="ingredients"
-        describedby="ingredientsHelp"
-        describe="Put each ingredient on its own line."
       ></shared-form-textarea>
       <shared-form-textarea
         id="directions"
+        describe="Put each step on its own line."
+        describedby="directionsHelp"
+        formControlName="directions"
         label="Directions"
         placeholder="Directions"
-        formControlName="directions"
-        describedby="directionsHelp"
-        describe="Put each step on its own line."
       ></shared-form-textarea>
     </div>
     <div class="col-12 col-lg-4">
       <div class="preview-image p-3 shadow mb-5 rounded-3">
         <img
+          class="rounded-3"
           alt="Preview Cover Image"
           sharedDefaultImage="/assets/images/defaults/default-upload.png"
-          class="rounded-3"
           [src]="
             coverImagePreview ||
               (recipe && recipe.coverImageURL ? recipe.coverImageURL : '')
@@ -55,25 +55,25 @@
         formControlName="coverImage"
       ></shared-form-input-file>
       <shared-form-input
-        type="number"
         id="preparationTime"
+        type="number"
+        formControlName="preparationTime"
         label="Preparation Time"
         placeholder="Preparation Time"
-        formControlName="preparationTime"
       ></shared-form-input>
       <shared-form-input
-        type="number"
         id="cookingTime"
+        type="number"
+        formControlName="cookingTime"
         label="Cooking Time"
         placeholder="Cooking Time"
-        formControlName="cookingTime"
       ></shared-form-input>
       <shared-form-input
-        type="number"
         id="servingsAmount"
+        type="number"
+        formControlName="servingsAmount"
         label="Servings Amount"
         placeholder="Servings Amount"
-        formControlName="servingsAmount"
       ></shared-form-input>
     </div>
   </div>
