@@ -4,6 +4,7 @@ import {
   Optional,
   SkipSelf,
 } from '@angular/core';
+
 import { FirebaseOptions, initializeApp } from 'firebase/app';
 
 import { FIREBASE_APP_TOKEN } from './firebase-app-token';

@@ -8,7 +8,6 @@ import { SharedUiFormInputModule } from '@my-recipes-book/shared/ui/form-input';
 import { SharedUiFormInputFileModule } from '@my-recipes-book/shared/ui/form-input-file';
 import { SharedUiFormTextareaModule } from '@my-recipes-book/shared/ui/form-textarea';
 import { SharedUiLoaderModule } from '@my-recipes-book/shared/ui/loader';
-
 import { SharedUiSafeUrlModule } from '@my-recipes-book/shared/ui/safe-url';
 
 import { FormComponent } from './form.component';

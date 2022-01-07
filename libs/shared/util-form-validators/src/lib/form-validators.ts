@@ -1,10 +1,11 @@
-import * as bytes from 'bytes';
 import {
   AbstractControl,
   ValidationErrors,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+
+import * as bytes from 'bytes';
 
 import { getFileExtension } from './get-file-extension';
 

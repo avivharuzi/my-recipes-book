@@ -1,4 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs';
+
 import {
   Auth,
   AuthProvider,
@@ -10,11 +13,10 @@ import {
   signOut,
   User,
 } from 'firebase/auth';
-import { Observable } from 'rxjs';
 
-import { FIREBASE_AUTH_TOKEN } from './firebase-auth-token';
-import { FirebaseAuthEmailPassword } from './firebase-auth-email-password';
 import { fromFirebasePromise } from '../utils';
+import { FirebaseAuthEmailPassword } from './firebase-auth-email-password';
+import { FIREBASE_AUTH_TOKEN } from './firebase-auth-token';
 import { fromFirebaseSignInPromise } from './utils';
 
 @Injectable({

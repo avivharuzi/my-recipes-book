@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+
 import {
   BehaviorSubject,
   from,
@@ -16,9 +17,9 @@ import {
   FirebaseUser,
 } from '@my-recipes-book/shared/util-firebase';
 
-import { AUTH_OPTIONS_TOKEN } from './auth-options-token';
-import { AuthOptions } from './auth-options';
 import { User } from '../entities';
+import { AuthOptions } from './auth-options';
+import { AUTH_OPTIONS_TOKEN } from './auth-options-token';
 
 @Injectable({
   providedIn: 'root',

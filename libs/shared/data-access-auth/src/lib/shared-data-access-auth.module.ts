@@ -5,6 +5,7 @@ import {
   Optional,
   SkipSelf,
 } from '@angular/core';
+
 import { take } from 'rxjs';
 
 import { AUTH_OPTIONS_TOKEN, AuthOptions, AuthService } from './infrastructure';

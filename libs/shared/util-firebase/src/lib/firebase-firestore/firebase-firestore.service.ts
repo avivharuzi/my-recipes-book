@@ -1,4 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
+
+import { map, Observable } from 'rxjs';
+
 import {
   addDoc,
   collection,
@@ -20,12 +23,11 @@ import {
   UpdateData,
   updateDoc,
 } from 'firebase/firestore';
-import { map, Observable } from 'rxjs';
 
-import { FIREBASE_FIRESTORE_TOKEN } from './firebase-firestore-token';
+import { fromFirebasePromise } from '../utils';
 import { FirebaseFirestoreModel } from './firebase-firestore-model';
 import { FirebaseFirestorePath } from './firebase-firestore-path';
-import { fromFirebasePromise } from '../utils';
+import { FIREBASE_FIRESTORE_TOKEN } from './firebase-firestore-token';
 import { getCollectionOrDocumentPath, getModel, QueryBuilder } from './utils';
 
 @Injectable({

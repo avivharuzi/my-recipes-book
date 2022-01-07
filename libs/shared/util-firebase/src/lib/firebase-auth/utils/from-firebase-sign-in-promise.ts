@@ -1,5 +1,6 @@
-import { User, UserCredential } from 'firebase/auth';
 import { map, Observable } from 'rxjs';
+
+import { User, UserCredential } from 'firebase/auth';
 
 import { fromFirebasePromise } from '../../utils';
 

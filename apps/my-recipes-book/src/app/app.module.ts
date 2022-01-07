@@ -10,9 +10,9 @@ import {
   FirebaseStorageModule,
 } from '@my-recipes-book/shared/util-firebase';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],

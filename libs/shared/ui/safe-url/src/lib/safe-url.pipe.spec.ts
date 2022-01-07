@@ -1,5 +1,5 @@
-import { DomSanitizer } from '@angular/platform-browser';
 import { TestBed } from '@angular/core/testing';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { SafeUrlPipe } from './safe-url.pipe';
 

@@ -1,4 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
+
+import { Observable } from 'rxjs';
+
 import {
   deleteObject,
   FirebaseStorage,
@@ -8,7 +11,6 @@ import {
   uploadBytes,
   UploadResult,
 } from 'firebase/storage';
-import { Observable } from 'rxjs';
 import { v4 as uuidV4 } from 'uuid';
 
 import { fromFirebasePromise } from '../utils';

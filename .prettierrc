@@ -1,3 +1,8 @@
 {
-  "singleQuote": true
+  "singleQuote": true,
+  "importOrder": ["^@angular/(.*)$", "^rxjs(.*)$", "<THIRD_PARTY_MODULES>", "^@my-recipes-book/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins" : ["typescript", "jsx", "classProperties", "decorators-legacy"]
 }
