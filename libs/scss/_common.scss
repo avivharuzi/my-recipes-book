@@ -3,8 +3,8 @@
 html,
 body,
 .font-body-regular {
-  font-family: variables.$font-body;
   font-weight: 400;
+  font-family: variables.$font-body;
 }
 
 .font-logo-regular {
@@ -12,13 +12,13 @@ body,
 }
 
 .font-body-light {
-  font-family: variables.$font-body;
   font-weight: 300;
+  font-family: variables.$font-body;
 }
 
 .font-body-bold {
-  font-family: variables.$font-body;
   font-weight: 700;
+  font-family: variables.$font-body;
 }
 
 .cursor-pointer {

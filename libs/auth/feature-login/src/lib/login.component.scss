@@ -1,16 +1,16 @@
 .login-wrapper {
-  background-image: url('/assets/images/backgrounds/cover-1920.jpg');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
   position: relative;
   width: 100%;
+  height: 100vh;
+  background-image: url('/assets/images/backgrounds/cover-1920.jpg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
 }
 
 .login-filter {
-  background: rgba(0, 0, 0, 0.75);
   display: block;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
 }
